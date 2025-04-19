@@ -1,0 +1,44 @@
+#!/usr/bin/python
+
+# #Солодилов_март_2025
+# Задержался после смены
+# Потрачено: 0.2 ч
+
+from datetime import datetime
+
+MONTHS = [
+    '',
+    'январь',
+    'февраль',
+    'март',
+    'апрель',
+    'май',
+    'июнь',
+    'июль',
+    'август',
+    'сентябрь',
+    'октябрь',
+    'ноябрь',
+    'декабрь',
+]
+
+reason = 'Задержался после смены'
+today = datetime.today()
+hours = 0.0
+ok = False
+
+while not ok:
+    try:
+        reason = input('Input reason:\n')
+        hours = round(int(input('Input time in minutes:\n')) / 60, 1)
+        ok = True
+    except Exception:
+        print("Wrong number, try again")
+
+print(
+f"""
+#Солодилов_{MONTHS[today.month]}_{today.year}
+{reason}
+Потрачено: {hours} ч
+"""
+)
