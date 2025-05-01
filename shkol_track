@@ -1,44 +1,23 @@
 #!/usr/bin/python
 
-# #Солодилов_март_2025
-# Задержался после смены
-# Потрачено: 0.2 ч
+from math import floor
 
-from datetime import datetime
 
-MONTHS = [
-    '',
-    'январь',
-    'февраль',
-    'март',
-    'апрель',
-    'май',
-    'июнь',
-    'июль',
-    'август',
-    'сентябрь',
-    'октябрь',
-    'ноябрь',
-    'декабрь',
-]
+def round_half_up(n, decimals=0):
+    multiplier = 10**decimals
+    return floor(n * multiplier + 0.5) / multiplier
 
-reason = 'Задержался после смены'
-today = datetime.today()
+
+minutes = 0
 hours = 0.0
 ok = False
 
 while not ok:
     try:
-        reason = input('Input reason:\n')
-        hours = round(int(input('Input time in minutes:\n')) / 60, 1)
+        minutes = int(input("Input time in minutes:\n"))
+        hours = round_half_up(minutes / 60, 1)
         ok = True
     except Exception:
         print("Wrong number, try again")
 
-print(
-f"""
-#Солодилов_{MONTHS[today.month]}_{today.year}
-{reason}
-Потрачено: {hours} ч
-"""
-)
+print(str(hours).replace(".", ","))
