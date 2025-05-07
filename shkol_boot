@@ -3,3 +3,5 @@
 hyprctl dispatch exec "kitty --session /home/twenty/Documents/Work/Shkolkovo_Boot/scripts_session"
 hyprctl dispatch exec "kitty --session /home/twenty/Documents/Work/Shkolkovo_Boot/ide_session"
 hyprctl dispatch exec "kitty --session /home/twenty/Documents/Work/Shkolkovo_Boot/open_session"
+hyprctl dispatch exec "thunar"
+exit
